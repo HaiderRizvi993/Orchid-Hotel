@@ -1,0 +1,286 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Style the header */
+
+header {
+    margin-top: 0px;
+    background-color: #aaaa;
+    padding: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    position: relative;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 10px;
+}
+
+.header {
+    height: 95vh;
+    /*Provided secreen ka kitna part cover karna hai is picture ne.*/
+    background-image: linear-gradient(to right bottom, #aa3744b7, #061a70b9), url(../img/headerBG.jfif);
+    background-size: cover;
+    background-position: center;
+    /*Yeah jb hm size hota karty to decide karta hai  k picture center ki trf jy ki is me (top, button, center) ki options hain. */
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+    position: relative;
+    /*isko karny se jb is k ander hm or div baany gy to uski postion in box k hisab se hoge is k ander he rahy ga matlb sb. */
+}
+
+.logo-box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo {
+    padding: 10px;
+    height: 80px;
+    /*width: 80px; if u set hight or width it will figur out other one by itself*/
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.logo:hover {
+    animation: moveInRight 1s ease-out;
+    -webkit-animation: moveInRight 1s ease-out;
+}
+
+.text-box {
+    position: absolute;
+    /*Isko center align karny k lia yeah zarooi hai.*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*Jb hm box ho center me ly k ana chaty to hm yeah function apply karty. */
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    text-align: center;
+    /*Is se button center me aa gaya */
+}
+
+.main-heading {
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    /*Animation me shake hoga to show nh hoga. */
+    -webkit-backface-visibility: hidden;
+    margin-bottom: 60px;
+}
+
+.main-heading-pre {
+    display: block;
+    /*Yeahjbusekartytospanelementpurablockcoverkarlytahaimeanspuriline.*/
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 25px;
+    animation: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    /**How animation is going to behave. */
+    /*animation-iteration-count: 3; Animation kitni bar play hoge*/
+    /*
+    animation-delay: 1s; # Animation start hony me kitna time lyge.*/
+}
+
+.main-heading-post {
+    display: block;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 10px;
+    animation: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translate(-100%);
+        -webkit-transform: translate(-100%);
+        -moz-transform: translate(-100%);
+        -ms-transform: translate(-100%);
+        -o-transform: translate(-100%);
+    }
+    80% {
+        transform: translate(20%);
+        -webkit-transform: translate(20%);
+        -moz-transform: translate(20%);
+        -ms-transform: translate(20%);
+        -o-transform: translate(20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+        -webkit-transform: translate(0);
+        -moz-transform: translate(0);
+        -ms-transform: translate(0);
+        -o-transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translate(100%);
+        -webkit-transform: translate(100%);
+        -moz-transform: translate(100%);
+        -ms-transform: translate(100%);
+        -o-transform: translate(100%);
+    }
+    80% {
+        transform: translate(-20%);
+        -webkit-transform: translate(-20%);
+        -moz-transform: translate(-20%);
+        -ms-transform: translate(-20%);
+        -o-transform: translate(-20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        -webkit-transform: translateY(30px);
+        -moz-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        -o-transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+        -webkit-transform: translate(0);
+        -moz-transform: translate(0);
+        -ms-transform: translate(0);
+        -o-transform: translate(0);
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /*QK<a>kneachyeklinehotitoyeahuslinekokhatamkardytahai.*/
+    padding: 15px 40px;
+    /**topandbottom=15px,leftandright40pxincaseof4value(t,r,b,l)*/
+    display: inline-block;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /**yeah shadow hai jb button k uper hm mouse ly k jy gy tb hoga yeah, shadow neachy ki trf nikaly ga or bluuer hota jy ga is lia 0 10 20 dia */
+}
+
+.btn:active {
+    transform: translate(-1px);
+    -webkit-transform: translate(-1px);
+    -moz-transform: translate(-1px);
+    -ms-transform: translate(-1px);
+    -o-transform: translate(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+    -webkit-transform: scaleX(1.4) scaleY(1.6);
+    -moz-transform: scaleX(1.4) scaleY(1.6);
+    -ms-transform: scaleX(1.4) scaleY(1.6);
+    -o-transform: scaleX(1.4) scaleY(1.6);
+}
+
+.btn-animate {
+    animation: moveInBottom .9s ease-out 2.1s;
+    -webkit-animation: moveInBottom .9s ease-out 2.1s;
+    animation-fill-mode: backwards;
+    /*Is ki waja se button start se he nazar nahi ay ga, bad me appear hoga.*/
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+
+#zoomLogo {
+    transition: transform .2s;
+    /* Animation */
+}
+
+#zoomLogo:hover {
+    transform: scale(3);
+    -webkit-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+    -webkit-transform: scale(3);
+}
